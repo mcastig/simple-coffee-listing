@@ -1,0 +1,65 @@
+/**
+ * Design tokens for Simple Coffee Listing.
+ *
+ * Raw brand palette -> semantic tokens. Components reference ONLY the
+ * semantic `--color-*` / `--font-*` tokens, never the raw hex, so theming
+ * (Step 6) is a matter of re-pointing tokens under `[data-theme="light"]`.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
+
+:root {
+  /* --- Raw brand palette (do not use directly in components) --- */
+  --c-cream: #fef7ee;
+  --c-yellow: #f6c768;
+  --c-gray: #6f757c;
+  --c-ink: #1b1d1f;
+  --c-mint: #bee3cc;
+  --c-espresso: #302522;
+  --c-black: #111315;
+  --c-slate: #4d5562;
+  --c-coral: #ed735d;
+
+  /* --- Typography --- */
+  --font-family: "DM Sans", system-ui, sans-serif;
+  --font-heading: 2rem; /* 32px */
+  --font-body: 1rem; /* 16px */
+  --font-label: 0.875rem; /* 14px */
+  --font-price: 0.75rem; /* 12px */
+  --font-small: 0.625rem; /* 10px */
+
+  /* --- Radii --- */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-pill: 999px;
+
+  /* --- Semantic tokens: DARK theme (reference design / default) --- */
+  --color-page-bg: var(--c-black);
+  --color-surface: var(--c-ink);
+  --color-text: var(--c-cream);
+  --color-text-muted: var(--c-gray);
+  --color-text-subtle: var(--c-slate);
+
+  --color-popular-bg: var(--c-yellow);
+  --color-popular-text: var(--c-ink);
+  --color-price-bg: var(--c-mint);
+  --color-price-text: var(--c-black);
+  --color-status: var(--c-coral);
+
+  --color-tab-active-bg: var(--c-slate);
+  --color-tab-active-text: var(--c-cream);
+  --color-tab-text: var(--c-cream);
+}
+
+/* --- Semantic tokens: LIGHT theme override (wired up in Step 6) --- */
+[data-theme="light"] {
+  --color-page-bg: var(--c-cream);
+  --color-surface: #ffffff;
+  --color-text: var(--c-ink);
+  --color-text-muted: var(--c-gray);
+  --color-text-subtle: var(--c-slate);
+
+  --color-tab-active-bg: var(--c-ink);
+  --color-tab-active-text: var(--c-cream);
+  --color-tab-text: var(--c-ink);
+}
