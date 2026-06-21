@@ -9,9 +9,11 @@ import "./CoffeeDashboard.css";
 
 // Background images are passed as CSS variables so Vite resolves the bundled,
 // base-aware asset URLs (the CSS only references the custom properties).
+// The URLs are quoted because Vite inlines small SVGs as data URIs that
+// contain single quotes, which would be invalid inside an unquoted url().
 const dashboardStyle = {
-  "--dashboard-bg": `url(${bgCafe})`,
-  "--dashboard-swirl": `url(${swirl})`,
+  "--dashboard-bg": `url("${bgCafe}")`,
+  "--dashboard-swirl": `url("${swirl}")`,
 } as CSSProperties;
 
 /**
