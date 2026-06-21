@@ -2,7 +2,7 @@
   min-height: 100vh;
   padding: clamp(1.5rem, 5vw, 5rem) 1rem 3rem;
   background-color: var(--color-page-bg);
-  background-image: url("/bg-cafe.jpg");
+  background-image: var(--dashboard-bg);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 100% auto;
@@ -27,7 +27,7 @@
   right: clamp(8rem, 22vw, 20rem);
   width: 260px;
   height: 140px;
-  background: url("/vector.svg") no-repeat center / contain;
+  background: var(--dashboard-swirl) no-repeat center / contain;
   pointer-events: none;
 }
 

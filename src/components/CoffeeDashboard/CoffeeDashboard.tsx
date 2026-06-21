@@ -1,8 +1,18 @@
+import type { CSSProperties } from "react";
 import { useCoffeeList } from "../../hooks/useCoffeeList";
 import { useCoffeeFilter } from "../../hooks/useCoffeeFilter";
 import { CoffeeCard } from "../CoffeeCard/CoffeeCard";
 import { CoffeeFilterTabs } from "../CoffeeFilterTabs/CoffeeFilterTabs";
+import bgCafe from "../../assets/bg-cafe.jpg";
+import swirl from "../../assets/vector.svg";
 import "./CoffeeDashboard.css";
+
+// Background images are passed as CSS variables so Vite resolves the bundled,
+// base-aware asset URLs (the CSS only references the custom properties).
+const dashboardStyle = {
+  "--dashboard-bg": `url(${bgCafe})`,
+  "--dashboard-swirl": `url(${swirl})`,
+} as CSSProperties;
 
 /**
  * Container/page component. Owns the view state (loading, error, active
@@ -14,7 +24,7 @@ export const CoffeeDashboard = () => {
   const { filter, setFilter, visibleCoffees } = useCoffeeFilter(coffees);
 
   return (
-    <main className="dashboard">
+    <main className="dashboard" style={dashboardStyle}>
       <section className="dashboard__panel" aria-labelledby="dashboard-title">
         <header className="dashboard__intro">
           <h1 id="dashboard-title" className="dashboard__title">

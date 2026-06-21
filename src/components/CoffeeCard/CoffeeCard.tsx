@@ -1,4 +1,6 @@
 import { hasRating, type CoffeeItem } from "../../types/coffee";
+import starFilled from "../../assets/star-fill.svg";
+import starEmpty from "../../assets/star.svg";
 import "./CoffeeCard.css";
 
 interface CoffeeCardProps {
@@ -39,7 +41,7 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
           <p className="coffee-card__rating">
             <img
               className="coffee-card__star"
-              src="/star-fill.svg"
+              src={starFilled}
               alt=""
               aria-hidden="true"
             />
@@ -50,7 +52,7 @@ export const CoffeeCard = ({ coffee }: CoffeeCardProps) => {
           <p className="coffee-card__rating coffee-card__rating--empty">
             <img
               className="coffee-card__star"
-              src="/star.svg"
+              src={starEmpty}
               alt=""
               aria-hidden="true"
             />

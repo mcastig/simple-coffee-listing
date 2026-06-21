@@ -4,6 +4,8 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
+  // Served from https://<user>.github.io/simple-coffee-listing/ on GitHub Pages.
+  base: "/simple-coffee-listing/",
   plugins: [react()],
   test: {
     globals: true,
