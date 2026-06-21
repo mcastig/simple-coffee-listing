@@ -1,9 +1,13 @@
 # Simple Coffee Listing
 
+[![Deploy to GitHub Pages](https://github.com/mcastig/simple-coffee-listing/actions/workflows/deploy.yml/badge.svg)](https://github.com/mcastig/simple-coffee-listing/actions/workflows/deploy.yml)
+
 A small coffee-collection page that fetches products from a remote API, renders
 reusable cards, lets you filter by availability, and supports a light/dark
 theme. Built for the [devChallenges](https://devchallenges.io) "Simple Coffee
 Listing" challenge.
+
+**Live demo:** https://mcastig.github.io/simple-coffee-listing/
 
 ## Tech stack
 
