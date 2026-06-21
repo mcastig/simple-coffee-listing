@@ -1,0 +1,32 @@
+.coffee-tabs {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.coffee-tabs__tab {
+  padding: 0.5rem 0.875rem;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: transparent;
+  color: var(--color-tab-text);
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.coffee-tabs__tab:hover {
+  background-color: color-mix(in srgb, var(--color-tab-active-bg) 35%, transparent);
+}
+
+.coffee-tabs__tab--active,
+.coffee-tabs__tab--active:hover {
+  background-color: var(--color-tab-active-bg);
+  color: var(--color-tab-active-text);
+}
+
+.coffee-tabs__tab:focus-visible {
+  outline: 2px solid var(--color-popular-bg);
+  outline-offset: 2px;
+}
