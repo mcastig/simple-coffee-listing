@@ -3,9 +3,8 @@
 [![Deploy to GitHub Pages](https://github.com/mcastig/simple-coffee-listing/actions/workflows/deploy.yml/badge.svg)](https://github.com/mcastig/simple-coffee-listing/actions/workflows/deploy.yml)
 
 A small coffee-collection page that fetches products from a remote API, renders
-reusable cards, lets you filter by availability, and supports a light/dark
-theme. Built for the [devChallenges](https://devchallenges.io) "Simple Coffee
-Listing" challenge.
+reusable cards, and lets you filter by availability. Built for the
+[devChallenges](https://devchallenges.io) "Simple Coffee Listing" challenge.
 
 **Live demo:** https://mcastig.github.io/simple-coffee-listing/
 
@@ -43,18 +42,16 @@ src/
 ├── components/
 │   ├── CoffeeCard/          # Presentational card (badge, price, rating)
 │   ├── CoffeeDashboard/     # Container: owns view state, composes hooks
-│   ├── CoffeeFilterTabs/    # Filter controls (All Products / Available Now)
-│   └── ThemeToggle/         # Light/dark switch
+│   └── CoffeeFilterTabs/    # Filter controls (All Products / Available Now)
 ├── hooks/
 │   ├── useCoffeeList.ts     # Fetch lifecycle: loading / error / data + reload
-│   ├── useCoffeeFilter.ts   # Memoized, non-mutating filter state
-│   └── useTheme.ts          # Theme state, persisted to localStorage
+│   └── useCoffeeFilter.ts   # Memoized, non-mutating filter state
 ├── lib/
 │   └── filterCoffees.ts     # Pure filter function + filter metadata
 ├── services/
 │   └── coffeeService.ts     # Fetches and normalizes the API data
 ├── styles/
-│   └── tokens.css           # Brand palette → semantic tokens (light/dark)
+│   └── tokens.css           # Brand palette → semantic tokens
 └── types/
     └── coffee.ts            # RawCoffeeItem (wire) → CoffeeItem (domain)
 ```
@@ -69,9 +66,8 @@ src/
   knows hooks exist; cards and tabs receive plain props and own no data.
 - **Filtering never mutates** the fetched array — `filterCoffees` is pure and
   wrapped in `useMemo`.
-- **Theming is token-only.** Components reference semantic `--color-*` tokens, so
-  switching themes just re-points tokens under `[data-theme="light"]`. An inline
-  script in `index.html` sets the theme before first paint to avoid a flash.
+- **Styling is token-only.** Components reference semantic `--color-*` tokens
+  rather than raw hex, keeping the palette in one place.
 - **Accessibility:** semantic landmarks and list markup, `aria-pressed` filter
   tabs, decorative icons hidden from screen readers, visible focus rings, and
   `prefers-reduced-motion` support.

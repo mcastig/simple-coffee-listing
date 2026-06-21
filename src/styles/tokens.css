@@ -2,8 +2,7 @@
  * Design tokens for Simple Coffee Listing.
  *
  * Raw brand palette -> semantic tokens. Components reference ONLY the
- * semantic `--color-*` / `--font-*` tokens, never the raw hex, so theming
- * (Step 6) is a matter of re-pointing tokens under `[data-theme="light"]`.
+ * semantic `--color-*` / `--font-*` tokens, never the raw hex.
  */
 
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap");
@@ -33,7 +32,7 @@
   --radius-md: 8px;
   --radius-pill: 999px;
 
-  /* --- Semantic tokens: DARK theme (reference design / default) --- */
+  /* --- Semantic tokens (reference design) --- */
   --color-page-bg: var(--c-black);
   --color-surface: var(--c-ink);
   --color-text: var(--c-cream);
@@ -49,17 +48,4 @@
   --color-tab-active-bg: var(--c-slate);
   --color-tab-active-text: var(--c-cream);
   --color-tab-text: var(--c-cream);
-}
-
-/* --- Semantic tokens: LIGHT theme override (wired up in Step 6) --- */
-[data-theme="light"] {
-  --color-page-bg: var(--c-cream);
-  --color-surface: #ffffff;
-  --color-text: var(--c-ink);
-  --color-text-muted: var(--c-gray);
-  --color-text-subtle: var(--c-slate);
-
-  --color-tab-active-bg: var(--c-ink);
-  --color-tab-active-text: var(--c-cream);
-  --color-tab-text: var(--c-ink);
 }

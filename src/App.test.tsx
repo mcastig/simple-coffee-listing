@@ -5,8 +5,7 @@ import App from "./App";
 afterEach(() => vi.unstubAllGlobals());
 
 describe("App", () => {
-  it("renders the theme toggle and the coffee dashboard", async () => {
-    vi.stubGlobal("matchMedia", vi.fn().mockReturnValue({ matches: false }));
+  it("renders the coffee dashboard", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -19,9 +18,6 @@ describe("App", () => {
 
     render(<App />);
 
-    expect(
-      screen.getByRole("button", { name: /switch to .* theme/i }),
-    ).toBeInTheDocument();
     expect(screen.getByText("Our Collection")).toBeInTheDocument();
   });
 });
